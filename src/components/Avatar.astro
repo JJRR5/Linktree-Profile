@@ -1,0 +1,19 @@
+---
+import Image from "astro/components/Image.astro";
+---
+<Image
+    class="avatar-image"
+    src='/avatar.jpg'
+    alt='Avatar Image'
+    width={50}
+    height={50}
+    quality="high"
+    format='webp'
+/>
+
+<style>
+    .avatar-image {
+        border-radius: 50%;
+    }
+
+</style>

@@ -27,10 +27,6 @@ El proyecto consiste en crear una página de perfil público que se pueda accede
 
 **Entrega:**
 
-- El candidato deberá entregar el código en un repositorio público de GitHub o GitLab.
-- Incluir un archivo `README.md` con instrucciones claras sobre cómo correr el proyecto localmente y cualquier consideración especial.
+- ✅ El candidato deberá entregar el código en un repositorio público de GitHub o GitLab.
+- ✅ Incluir un archivo `README.md` con instrucciones claras sobre cómo correr el proyecto localmente y cualquier consideración especial.
 - El proyecto debe estar listo para ser revisado dentro de una semana a partir de la asignación de la prueba.
-
----
-
-Esta prueba técnica está diseñada para evaluar tanto las habilidades técnicas como el sentido de diseño del candidato, asegurando que puedan trabajar eficientemente con el framework Astro y manejar correctamente CSS y la estructura del proyecto
