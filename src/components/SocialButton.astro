@@ -1,0 +1,21 @@
+---
+    interface Props {
+        url: string;
+        name: string
+    }
+    const { url, name } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer">
+    {name}
+</a>
+
+<style>
+    a {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #333;
+        color: white;
+        text-decoration: none;
+    }
+</style>

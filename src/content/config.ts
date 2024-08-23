@@ -5,15 +5,17 @@ const userCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      description: z.string(),
-      avatar: image().refine((img) => img.width < 1200, {
-        message: "Image width must be greater than 5000px",
-      }),
-      socialMedia: z.array(z.string()),
+      description: z.string().min(5).max(80),
+      avatar: image(),
+      socialMedia: z.array(
+        z.object({
+          name: z.string(),
+          url: z.string(),
+        }),
+      ),
     }),
 });
 
 export const collections = {
-  // the key is the name of the collection
-  user: userCollection,
+  users: userCollection,
 };

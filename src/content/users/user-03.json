@@ -1,0 +1,19 @@
+{
+  "name": "Jose Rodriguez",
+  "description": "Hello there! I'm a software engineer who loves building web applications.",
+  "avatar": "./images/avatar1.webp",
+  "socialMedia": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/JJRR5"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jjoserr/"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://x.com/JJoseRodriguezR"
+    }
+  ]
+}
