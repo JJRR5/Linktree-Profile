@@ -1,19 +1,19 @@
 {
-  "name": "Jose Rodriguez",
-  "description": "Hello there! I'm a software engineer who loves building web applications.",
-  "avatar": "./images/avatar1.webp",
+  "name": "Luis Fernandez",
+  "bio": "DevOps engineer with a passion for automation and cloud technologies.",
+  "avatar": "./images/avatar3.jpeg",
   "socialMedia": [
     {
       "name": "GitHub",
-      "url": "https://github.com/JJRR5"
+      "url": "https://github.com/LuisFernandez"
     },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/jjoserr/"
+      "url": "https://www.linkedin.com/in/luisfernandez/"
     },
     {
       "name": "Twitter",
-      "url": "https://x.com/JJoseRodriguezR"
+      "url": "https://x.com/LuisFernandez"
     }
   ]
 }

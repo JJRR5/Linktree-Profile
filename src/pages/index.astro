@@ -1,16 +1,32 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import UserCard from "@/components/UserCard.astro";
 const users = await getCollection("users");
 
 ---
 
 <Layout title="home">
-	{
-		users.map((user) => (
-			<a href={`/${user.id}`}>
-				<h2>{user.data.name}</h2>
-			</a>
-		))
-	}
+	<div class="container mx-auto">
+		<h1>Profiles</h1>
+		<main >
+			{
+				users.map((user) => (
+					<UserCard user={user} />
+				))
+			}
+		</main>
+	</div>
 </Layout>
+<style>
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 5rem;
+	}
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+		padding: 2rem;
+	}
+</style>

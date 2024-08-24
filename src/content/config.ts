@@ -5,7 +5,7 @@ const userCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      description: z.string().min(5).max(80),
+      bio: z.string().min(5).max(80),
       avatar: image(),
       socialMedia: z.array(
         z.object({

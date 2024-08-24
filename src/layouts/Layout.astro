@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title: string;
 }
@@ -10,10 +12,11 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="bio" content="Astro bio" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -22,7 +25,11 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--text-color: #ffffffd3;
+		--text-color: #ffffffaf;
+		--white: #ffffffe4;
+		--primary:  #0F0F0F;
+		--secondary: #FFA732;
+		--secondary-dark: #e08c1e;
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -36,23 +43,21 @@ const { title } = Astro.props;
 		padding: 0;
 	}
 	body {
-		background: linear-gradient(rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42));
+		background: linear-gradient(rgb(15, 23, 42), var(--primary), rgb(15, 23, 42));
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-	}
-	h1 {
-		font-size: 3.6rem;
 	}
 	h4 {
 		font-size: 1.8rem;
 		font-weight: normal;
 	}
-	p {
-		font-size: 1.8rem;
-	}
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 5rem 3rem;
+	}
+	.flex-col {
+		display: flex;
+        flex-direction: column;
 	}
 </style>

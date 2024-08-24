@@ -1,19 +1,19 @@
 {
-  "name": "Jose Rodriguez",
-  "description": "Hello there! I'm a software engineer who loves building web applications.",
-  "avatar": "./images/avatar1.webp",
+  "name": "Carlos Martinez",
+  "bio": "Full-stack developer with a knack for creating efficient web applications.",
+  "avatar": "./images/avatar2.jpg",
   "socialMedia": [
     {
       "name": "GitHub",
-      "url": "https://github.com/JJRR5"
+      "url": "https://github.com/CarlosMartinez"
     },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/jjoserr/"
+      "url": "https://www.linkedin.com/in/carlosmartinez/"
     },
     {
       "name": "Twitter",
-      "url": "https://x.com/JJoseRodriguezR"
+      "url": "https://x.com/CarlosMartinez"
     }
   ]
 }

@@ -1,13 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
-import { getCollection, type CollectionEntry } from "astro:content";
 import SocialButton from "@/components/SocialButton.astro";
 import AvatarImage from "@/components/AvatarImage.astro";
+import UserService from "@/services/UserService";
+import GoBackButton from "@/components/GoBackButton.astro";
 
 export const getStaticPaths = (async () => {
-    const users = await getCollection("users");
-    return users.map((user: CollectionEntry<'users'>) => ({
+    const users = await UserService.getUsers();
+    return users.map((user) => ({
         params: { user: user.id },
         props: {user: user.data}
     }));
@@ -16,17 +17,20 @@ export const getStaticPaths = (async () => {
 const { user } = Astro.props;
 
 ---
-<Layout title="my-profile">
-	<main class="container avatar-container">
+<Layout title={user.name}>
+    <GoBackButton/>
+	<main class="container avatar-container flex-col">
         <AvatarImage
+            shadow
             avatar={user.avatar}
             name={user.name}
+            quality="high"
         />
         <section class="avatar-info">
-            <h1>{ user.name }</h1>
-            <p>{ user.description }</p>
+            <h1 class="avatar-title">{ user.name }</h1>
+            <p>{ user.bio }</p>
         </section>
-        <section class="social-media-container">
+        <section class="social-media-container flex-col">
             {
                 user.socialMedia.map((social) => (
                     <SocialButton
@@ -41,28 +45,32 @@ const { user } = Astro.props;
 <style>
     .avatar-container {
         margin-top: 5rem;
-        display: flex;
-        flex-direction: column;
         align-items: center;
         gap: 2rem;
-        .avatar-image {
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        }
         .avatar-info {
             text-align: center;
+            .avatar-title {
+                font-size: 5rem;
+                background: linear-gradient(to bottom, var(--secondary) 50%, var(--primary));
+                color: transparent;
+                background-clip: text;
+            }
         }
         h1 {
             margin-bottom: 2rem;
         }
         p {
             padding: 0 5rem;
-        } 
+            font-size: 2.5rem;
+            @media (min-width: 768px) {
+                & {
+                    font-size: 3rem;
+                }
+            } 
+        }
     }
     .social-media-container {
         margin-top: 3rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        gap: 4rem;
     }
 </style>

@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import AvatarImage from "./AvatarImage.astro";
+
+interface Props {
+    user: CollectionEntry<'users'>;
+}
+
+const { user: {data, id} } = Astro.props;
+---
+<div class="flex-col card">
+    <AvatarImage
+        avatar={data.avatar}
+        name={data.name}
+        width={150}
+        height={150}
+        quality="low"
+    />
+    <p>{data.bio}</p>
+    <a href={`/${id}`}>View Profile</a>
+</div>
+<style>
+    .card {
+        padding: 1rem 2rem;
+        border: 1px solid var(--secondary);
+        border-radius: 2rem;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        box-shadow: 0 0 10px var(--secondary);
+        p {
+            width: 250px;
+            font-size: 1.8rem;
+            color: var(--text-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        a {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            text-decoration: none
+        }
+        a:hover {
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+    }
+</style>
