@@ -1,0 +1,27 @@
+---
+---
+<div class='stars-container'>
+    <div id='stars1' class='stars'></div>
+    <div id='stars2' class='stars'></div>
+    <div id='stars3' class='stars'></div>
+</div>
+<script>
+  const initBG = () : void => {
+    document.querySelectorAll('.stars').forEach(($el, index) => {
+      const numberOfStars = Math.floor(1000 / ( index + 1)); 
+      const $element = $el as HTMLElement;
+      $element.style.cssText = `
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      box-shadow: ${generateStars(numberOfStars)};
+      `;
+    })
+  }
+  const generateStars = (n: number): string => {
+      return Array.from({ length: n - 1 }, () => `${getRandom(2560)}px ${getRandom(2560)}px #fff`).join(', ');
+  };
+  const getRandom = (max: number): number => Math.floor(Math.random() * max);
+  document.addEventListener('astro:after-swap', initBG);
+  initBG();
+</script>
